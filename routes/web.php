@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\PhotosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,10 @@ Route::get('introduction', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name("contact");
+
+Route::get('/gallery', function () {
+    return Route::resource('photo', [PhotosController::class]);
+})->name("gallery");
 
 Route::post('/contact', [ContactController::class, 'ContactUsForm'])->name('contact.store');
 
