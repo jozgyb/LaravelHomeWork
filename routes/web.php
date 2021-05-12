@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,7 +38,5 @@ Route::group(['middleware' => 'auth2'], function () {
     Route::get('user', function () {
         return view('user');
     })->name("user");
-    Route::get('admin', function () {
-        return view('admin');
-    })->name("admin");
+    Route::get('admin', [MessageController::class, 'show'])->name("admin");
 });

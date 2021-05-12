@@ -52,7 +52,7 @@
                                 <a class="nav-link" href="{{ route('user') }}">{{"User"}}</a>
                             </li>
                             <?php if (Auth::user()->role==1){?>
-                                <a class="nav-link" href="{{ route('admin') }}">{{"Admin"}}</a>
+                                <a class="nav-link" href="{{ route('admin') }}">{{"Messages"}}</a>
                             <?php } ?>
                         @endauth
                         <!-- Authentication Links -->
