@@ -33,9 +33,7 @@ Route::get('/contact', function () {
     return view('contact');
 })->name("contact");
 
-Route::get('/gallery', function () {
-    return Route::resource('photo', [PhotosController::class]);
-})->name("gallery");
+Route::resource('gallery', PhotosController::class);
 
 Route::post('/contact', [ContactController::class, 'ContactUsForm'])->name('contact.store');
 
