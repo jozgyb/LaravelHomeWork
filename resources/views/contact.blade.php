@@ -1,30 +1,59 @@
 @extends('layouts.app')
 @section('content')
 <h2>Contact Us</h2>
-    <p>By filling the form below you can send us a message.</p>
-    <form id="messageForm" method="post">
-        <div class="form-group">
-            <label for="sender">Name</label>
-            <input id="sender" type="text" name="sender" class="form-control" value="" required maxlength="75">
-            <span class="help-block"></span>
+    <div class="container mt-5">
+    <!-- Success message -->
+        @if(Session::has('success'))
+        <div class="alert alert-success">
+            {{Session::get('success')}}
         </div>
-        <div class="form-group">
-            <label for="sendermail">E-mail</label>
-            <input id="sendermail" type="text" name="sendermail" class="form-control" value="" required maxlength="75">
-            <span class="help-block"></span>
-        </div>
-        <div class="form-group">
-            <label for="subject">Subject</label>
-            <input id="subject" type="text" name="subject" class="form-control" value="" required maxlength="255">
-            <span class="help-block"></span>
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" class="form-control" required></textarea>
-            <span class="help-block"></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Send">
-        </div>
-    </form>
+        @endif
+        <p>By filling the form below you can send us a message.</p>
+        <form id="messageForm" method="post" action="{{ route('contact.store') }}">
+            @csrf
+            <div class="form-group">
+                <label for="sender">Name</label>
+                <input id="sender" type="text" name="sender" class="form-control {{ $errors->has('sender') ? 'error' : '' }}" value="" required maxlength="75">
+
+                @if ($errors->has('sender'))
+                <div class="error">
+                    {{ $errors->first('sender') }}
+                </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input id="email" type="text" name="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" value="" required maxlength="75">
+
+                @if ($errors->has('email'))
+                <div class="error">
+                    {{ $errors->first('email') }}
+                </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input id="subject" type="text" name="subject" class="form-control {{ $errors->has('subject') ? 'error' : '' }}" value="" required maxlength="255">
+
+                @if ($errors->has('subject'))
+                <div class="error">
+                    {{ $errors->first('subject') }}
+                </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="form-control {{ $errors->has('message') ? 'error' : '' }}" required></textarea>
+
+                @if ($errors->has('message'))
+                <div class="error">
+                    {{ $errors->first('message') }}
+                </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" name="send" value="Send">
+            </div>
+        </form>
+    </div>
 @endsection

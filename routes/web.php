@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,10 +27,11 @@ Route::get('introduction', function () {
     return view('introduction');
 })->name("introduction");
 
-Route::get('contact', function () {
+Route::get('/contact', function () {
     return view('contact');
 })->name("contact");
 
+Route::post('/contact',[ContactController::class, 'ContactUsForm'])->name('contact.store');
 
 Route::group(['middleware' => 'auth2'], function () {
     Route::get('user', function () {
