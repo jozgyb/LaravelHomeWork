@@ -38,6 +38,17 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('introduction') }}">{{"Introduction"}}</a>
+                        </li>
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user') }}">{{"User"}}</a>
+                            </li>                       
+                            <?php if (Auth::user()->role==1){?>
+                                <a class="nav-link" href="{{ route('admin') }}">{{"Admin"}}</a>  
+                            <?php } ?>                                                  
+                        @endauth
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
