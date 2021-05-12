@@ -44,10 +44,10 @@
                         @auth
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('user') }}">{{"User"}}</a>
-                            </li>                       
+                            </li>
                             <?php if (Auth::user()->role==1){?>
-                                <a class="nav-link" href="{{ route('admin') }}">{{"Admin"}}</a>  
-                            <?php } ?>                                                  
+                                <a class="nav-link" href="{{ route('admin') }}">{{"Admin"}}</a>
+                            <?php } ?>
                         @endauth
                         <!-- Authentication Links -->
                         @guest
