@@ -39,7 +39,13 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('/') }}">{{"Home"}}</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('introduction') }}">{{"Introduction"}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('contact') }}">{{"Contact"}}</a>
                         </li>
                         @auth
                             <li class="nav-item">

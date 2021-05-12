@@ -15,15 +15,27 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('exercise1', function () { return view('view1'); }); 
-Route::get('introduction', function () { return view('introduction'); })->name("introduction");
-
-Route::group(['middleware' => 'auth2'], function () {     
-    Route::get('user', function () { return view('user'); })->name("user");
-    Route::get('admin', function () { return view('admin'); })->name("admin");
+Route::get('exercise1', function () {
+    return view('view1');
 });
+Route::get('introduction', function () {
+    return view('introduction');
+})->name("introduction");
 
+Route::get('contact', function () {
+    return view('contact');
+})->name("contact");
+
+
+Route::group(['middleware' => 'auth2'], function () {
+    Route::get('user', function () {
+        return view('user');
+    })->name("user");
+    Route::get('admin', function () {
+        return view('admin');
+    })->name("admin");
+});
