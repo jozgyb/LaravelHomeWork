@@ -23,9 +23,9 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <button class="btn btn-danger">Delete </button>
           </form>
-        </div>
         <?php } ?>
         @endauth
+        </div>
     @endforeach
 </div>
 {{ $images->links('pagination::bootstrap-4') }}
