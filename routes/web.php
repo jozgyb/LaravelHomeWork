@@ -32,7 +32,7 @@ Route::get('/contact', function () {
     return view('contact');
 })->name("contact");
 
-Route::post('/contact',[ContactController::class, 'ContactUsForm'])->name('contact.store');
+Route::post('/contact', [ContactController::class, 'ContactUsForm'])->name('contact.store');
 
 Route::group(['middleware' => 'auth2'], function () {
     Route::get('user', function () {
@@ -40,3 +40,7 @@ Route::group(['middleware' => 'auth2'], function () {
     })->name("user");
     Route::get('admin', [MessageController::class, 'show'])->name("admin");
 });
+
+Route::get('/original', function () {
+    return redirect()->away("https://csodacsoport.hu/");
+})->name("original");
