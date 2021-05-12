@@ -39,8 +39,8 @@ Route::post('/contact', [ContactController::class, 'ContactUsForm'])->name('cont
 
 Route::group(['middleware' => 'auth2'], function () {
     Route::get('user', function () {
-        return view('user');
-    })->name("user");
+        return redirect()->route('gallery.index');
+    });
     Route::get('admin', [MessageController::class, 'show'])->name("admin");
 });
 

@@ -54,9 +54,6 @@
                             <a class="nav-link" href="{{ route('gallery.index') }}">{{"Gallery"}}</a>
                         </li>
                         @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user') }}">{{"User"}}</a>
-                            </li>
                             <?php if (Auth::user()->role==1){?>
                                 <a class="nav-link" href="{{ route('admin') }}">{{"Messages"}}</a>
                             <?php } ?>
