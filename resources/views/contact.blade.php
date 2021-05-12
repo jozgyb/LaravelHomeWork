@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<h2>Contact Us</h2>
-    <div class="container mt-5">
+<div class="container mt-5">
+        <h2>Contact Us</h2>
     <!-- Success message -->
         @if(Session::has('success'))
         <div class="alert alert-success">
