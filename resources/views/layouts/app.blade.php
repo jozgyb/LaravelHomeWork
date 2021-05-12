@@ -90,7 +90,9 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container-fluid" id="content-wrapper">
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>
