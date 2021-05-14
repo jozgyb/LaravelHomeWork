@@ -41,7 +41,10 @@ Route::group(['middleware' => 'auth2'], function () {
     Route::get('user', function () {
         return redirect()->route('gallery.index');
     });
-    Route::get('admin', [MessageController::class, 'show'])->name("admin");
+    Route::get('message', [MessageController::class, 'show'])->name("message");
+    Route::get('admin', function () {
+        return view('admin');
+    })->name("admin");
 });
 
 Route::get('/original', function () {

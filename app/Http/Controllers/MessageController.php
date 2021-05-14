@@ -10,6 +10,6 @@ class MessageController extends Controller
     function show()
     {
         $data = Message::all()->sortByDesc('created_at');
-        return view('admin', ['messages' => $data]);
+        return view('message', ['messages' => $data]);
     }
 }
