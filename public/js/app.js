@@ -49886,8 +49886,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! c:\Portable-LaravelMappa-8.11.2-UI és Frontend csomagokkal\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! c:\Portable-LaravelMappa-8.11.2-UI és Frontend csomagokkal\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\workspace\github\LaravelHomeWork\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\workspace\github\LaravelHomeWork\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

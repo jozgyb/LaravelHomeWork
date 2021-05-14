@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 html, body {
-    height: 100%;
-    width: 100%;
     font-family: 'Poppins', sans-serif;
     color: #222;
 }
@@ -23,7 +21,6 @@ html, body {
 }
 
 .welcome {
-    width: 75%;
     margin: 0 auto;
     padding-top: 2rem;
 }
