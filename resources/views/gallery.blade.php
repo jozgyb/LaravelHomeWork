@@ -19,6 +19,7 @@
         @auth
         <?php if (Auth::user()->role==1 || Auth::user()->role==2){?>
           <form action="{{ URL::route('gallery.destroy',$row->id) }}" method="POST">
+            <a href="{{ route('gallery.edit', $row->id) }}" class="btn btn-info">Edit </a>
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <button class="btn btn-danger">Delete </button>

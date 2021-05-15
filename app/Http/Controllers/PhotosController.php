@@ -93,7 +93,7 @@ class PhotosController extends Controller
                 'image' => 'image|max:2048'
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('gallery'), $image_name);
+            $image->move(public_path('images'), $image_name);
         }
         else
         {
